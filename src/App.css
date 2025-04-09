@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.poppins {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}

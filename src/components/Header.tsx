@@ -1,15 +1,18 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import hamburgerIcon from "../assets/hamburger.svg";
 import ellipse from "../assets/ellipse.svg";
 import logo from "../assets/logo.png";
 
 export const Header = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <>
       <Box
         sx={{
           position: "relative",
-          width: "100vw",
+          width: "100%",
           height: "100vh",
           display: "flex",
           justifyContent: { xs: "flex-start", md: "center" },
@@ -20,6 +23,7 @@ export const Header = () => {
           sx={{
             paddingLeft: { xs: "20px", md: "0px" },
             width: { xs: "60%", md: "fit-content" },
+            zIndex: 2,
           }}>
           <Typography
             sx={{
@@ -57,11 +61,34 @@ export const Header = () => {
           src={logo}
           alt="logo"
           style={{
-            width: "70px",
-            height: "20px",
+            width: isMobile ? "50px" : "70px",
+            height: "auto",
             position: "absolute",
             left: "20px",
             top: "20px",
+            zIndex: 2,
+          }}
+        />
+        <img
+          src={ellipse}
+          alt="ellipse"
+          style={{
+            width: isMobile ? "120px" : "200px",
+            height: isMobile ? "120px" : "200px",
+            position: "absolute",
+            right: isMobile ? "-10%" : "-5%",
+            bottom: isMobile ? "50%" : "-5%",
+          }}
+        />
+        <img
+          src={ellipse}
+          alt="ellipse"
+          style={{
+            width: isMobile ? "120px" : "200px",
+            height: isMobile ? "120px" : "200px",
+            position: "absolute",
+            top: isMobile ? "-10%" : "-15%",
+            right: isMobile ? "20%" : "50%",
           }}
         />
         <img
@@ -71,30 +98,8 @@ export const Header = () => {
             width: "200px",
             height: "200px",
             position: "absolute",
-            right: "-5%",
-            bottom: "-5%",
-          }}
-        />
-        <img
-          src={ellipse}
-          alt="ellipse"
-          style={{
-            width: "200px",
-            height: "200px",
-            position: "absolute",
-            top: "-15%",
-            right: "50%",
-          }}
-        />
-        <img
-          src={ellipse}
-          alt="ellipse"
-          style={{
-            width: "200px",
-            height: "200px",
-            position: "absolute",
-            left: "-7%",
-            top: "50%",
+            left: isMobile ? "-20%" : "-7%",
+            top: isMobile ? "65%" : "50%",
             rotate: "90deg",
           }}
         />
@@ -103,8 +108,8 @@ export const Header = () => {
           src={hamburgerIcon}
           alt="hamburger"
           style={{
-            width: "40px",
-            height: "40px",
+            width: isMobile ? "30px" : "40px",
+            height: isMobile ? "30px" : "40px",
             display: "block",
             position: "absolute",
             right: "20px",

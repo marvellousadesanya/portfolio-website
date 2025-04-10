@@ -8,16 +8,21 @@ export const Footer = () => {
         position: "relative",
         color: "white",
         background: "linear-gradient(to right, #251486, #0B91D9)",
-        padding: "100px",
+        paddingX: { xs: "20px", md: "100px" },
+        paddingY: { xs: "80px", md: "100px" },
         minHeight: "769px",
         display: "flex",
-        alignItems: "center",
+        alignItems: { xs: "flex-start", md: "center" },
         justifyContent: "center",
       }}>
       <Box sx={{ width: "100%" }}>
         <Box sx={{ width: "85%" }}>
           <Box>
-            <Typography sx={{ fontSize: "60px", fontWeight: 400 }}>
+            <Typography
+              sx={{
+                fontSize: { xs: "30px", md: "60px" },
+                fontWeight: 400,
+              }}>
               Contact Me
             </Typography>
 
@@ -25,6 +30,8 @@ export const Footer = () => {
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
+                flexDirection: { xs: "column", md: "row" },
+                gap: { xs: "50px", md: 0 },
                 mt: "100px",
                 fontSize: "20px",
               }}>
@@ -62,13 +69,18 @@ export const Footer = () => {
                 </Typography>
               </Box>
             </Box>
-            <Box width="100%" height="4px" bgcolor="white" />
+            <Box
+              width="100%"
+              height="4px"
+              bgcolor="white"
+              display={{ xs: "none", md: "block" }}
+            />
           </Box>
 
           <Box
             sx={{
               position: "absolute",
-              right: "50px",
+              right: { xs: "50%", md: "50px" },
               bottom: "50px",
               display: "flex",
               justifyContent: "center",
@@ -76,6 +88,7 @@ export const Footer = () => {
               gap: "10px",
               cursor: "pointer",
               flexDirection: "column",
+              transform: { xs: "translateX(50%)", md: "none" },
             }}>
             <img
               src={arrow}

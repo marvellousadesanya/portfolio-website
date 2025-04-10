@@ -30,7 +30,6 @@ export const LegalBuddyProject = () => {
               xl: "80px",
               "2xl": "120px",
             },
-
             width: "100%",
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
@@ -40,8 +39,6 @@ export const LegalBuddyProject = () => {
           }}>
           <TextSection />
           <ImageSection />
-          {/* <img src={legalBuddyApp} alt="legalBuddyApp" />
-          <img src={legalBuddyAppBig} alt="legalBuddyAppBig" /> */}
         </Box>
       </Box>
     </Box>

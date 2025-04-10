@@ -22,7 +22,7 @@ export const TextSection = () => {
           sx={{
             fontSize: { xs: "16px", md: "20px" },
             fontWeight: 500,
-            mt: "20px",
+            mt: { xs: "0", md: "20px" },
             textAlign: { xs: "center", md: "left" },
           }}>
           Legal Buddy's app allows users to select lawyers for different cases,
@@ -33,7 +33,7 @@ export const TextSection = () => {
           sx={{
             textDecoration: "underline",
             fontWeight: 600,
-            fontSize: "20px",
+            fontSize: { xs: "16px", md: "20px" },
             textAlign: { xs: "center", md: "left" },
           }}>
           View Project

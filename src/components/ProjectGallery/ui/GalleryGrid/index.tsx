@@ -1,12 +1,15 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import project1 from "../../../../assets/project-1.png";
 import project2 from "../../../../assets/project-2.png";
 import project3 from "../../../../assets/project-3.png";
 
 export const GalleryGrid = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box width="100%">
-      <Stack direction="row" spacing={2}>
+      <Stack direction={isMobile ? "column" : "row"} spacing={2}>
         {/* First column with one tall image */}
         <Box
           sx={{
@@ -25,11 +28,11 @@ export const GalleryGrid = () => {
         {/* Second column with two stacked images of equal height */}
         <Box
           sx={{
-            width: "100%",
+            width: { xs: "100%", md: "50%" },
             display: "flex",
             flexDirection: "column",
             gap: 2,
-            height: "100%",
+            height: isMobile ? "auto" : "100%",
           }}>
           {/* First image takes 50% of height */}
           <Box sx={{ flex: 1 }}>

@@ -4,8 +4,14 @@ import { designFocuses } from "./data/designfocuses";
 
 export const DesignFocus = () => {
   return (
-    <Box sx={{ padding: "100px", bgcolor: "#0B91D9" }}>
-      <Typography sx={{ fontSize: "50px", fontWeight: 500 }}>
+    <Box sx={{ padding: { xs: "20px", md: "100px" }, bgcolor: "#0B91D9" }}>
+      <Typography
+        sx={{
+          fontSize: { xs: "30px", md: "50px" },
+          fontWeight: 500,
+          width: { xs: "100%", md: "fit-content" },
+          textAlign: { xs: "center", md: "left" },
+        }}>
         Design Focuses
       </Typography>
 

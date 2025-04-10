@@ -1,6 +1,6 @@
 import { Box, Stack } from "@mui/material";
 import legalBuddyApp from "../../../../assets/legal-buddy-app2.png";
-import legalBuddyAppBig from "../../../../assets/legal-buddy-app.png";
+import legalBuddyAppBig from "../../../../assets/legal-buddy-app-transparent.png";
 
 export const ImageSection = () => {
   return (

@@ -6,14 +6,18 @@ export const GoMail = () => {
     <Box
       sx={{
         bgcolor: "#291770",
-        padding: "100px",
+        padding: { xs: "20px", md: "100px" },
         display: "flex",
         justifyContent: "center",
       }}>
       <Stack
         direction="row"
         spacing={2}
-        sx={{ width: "100%", justifyContent: "space-between" }}>
+        sx={{
+          width: "100%",
+          justifyContent: "space-between",
+          flexDirection: { xs: "column", md: "row" },
+        }}>
         <Box sx={{ color: "white" }}>
           <Typography sx={{ fontSize: "60px", fontWeight: 500 }}>
             GoMail

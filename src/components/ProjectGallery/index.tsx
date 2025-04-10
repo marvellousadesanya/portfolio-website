@@ -3,7 +3,7 @@ import { GalleryGrid } from "./ui/GalleryGrid";
 
 export const ProjectGallery = () => {
   return (
-    <Box sx={{ padding: "100px", bgcolor: "#E1E3DE" }}>
+    <Box sx={{ padding: { xs: "20px", md: "100px" }, bgcolor: "#E1E3DE" }}>
       <Typography sx={{ fontSize: "50px", fontWeight: 500 }}>
         Project Gallery
       </Typography>

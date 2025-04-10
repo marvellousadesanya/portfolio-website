@@ -9,18 +9,21 @@ import {
   Footer,
 } from "./components";
 import "./App.css";
+import { Box } from "@mui/material";
 
 function App() {
   return (
     <>
-      <Header />
-      <Profile />
-      <DesignFocus />
-      <ProjectGallery />
-      <LegalBuddyProject />
-      <GoMail />
-      <UniTalk />
-      <Footer />
+      <Box sx={{ overflow: "hidden" }}>
+        <Header />
+        <Profile />
+        <DesignFocus />
+        <ProjectGallery />
+        <LegalBuddyProject />
+        <GoMail />
+        <UniTalk />
+        <Footer />
+      </Box>
     </>
   );
 }

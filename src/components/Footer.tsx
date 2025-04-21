@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import linkedInLogo from "../assets/linkedin.svg";
-// import xLogo from "../assets/x.svg";
+import xLogo from "../assets/x.svg";
 import instagramLogo from "../assets/instagram.svg";
 import behanceLogo from "../assets/behance.svg";
 
@@ -141,9 +141,9 @@ export const Footer = () => {
                     <img src={linkedInLogo} alt="LinkedIn" />
                   </Link>
 
-                  {/* <Link href="https://x.com/itohan_ovens">
+                  <Link href="https://x.com/itohan_ovens">
                     <img src={xLogo} alt="X" />
-                  </Link> */}
+                  </Link>
 
                   <Link href="https://www.instagram.com/esther_itohan/">
                     <img src={instagramLogo} alt="Instagram" />

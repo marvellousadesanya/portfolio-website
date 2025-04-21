@@ -18,12 +18,10 @@ export const Footer = () => {
   const lineRef = useRef(null);
   const backToTopRef = useRef(null);
 
-  // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(
     () => {
-      // Create a timeline for the animations
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,

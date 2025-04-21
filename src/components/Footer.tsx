@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import linkedInLogo from "../assets/linkedin.svg";
-import xLogo from "../assets/x.svg";
+import xLogo from "../assets/x-logo.svg";
 import instagramLogo from "../assets/instagram.svg";
 import behanceLogo from "../assets/behance.svg";
 

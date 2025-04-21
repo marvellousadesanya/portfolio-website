@@ -30,7 +30,6 @@ export const Footer = () => {
         },
       });
 
-      // Title animation
       tl.from(titleRef.current, {
         y: 50,
         opacity: 0,
@@ -38,7 +37,6 @@ export const Footer = () => {
         ease: "power2.out",
       });
 
-      // Contact info animations - staggered
       tl.from(
         [socialsRef.current, emailRef.current, phoneRef.current],
         {
@@ -51,7 +49,6 @@ export const Footer = () => {
         "-=0.3"
       );
 
-      // Line animation
       tl.from(
         lineRef.current,
         {
@@ -63,7 +60,6 @@ export const Footer = () => {
         "-=0.4"
       );
 
-      // Back to top button animation
       tl.from(
         backToTopRef.current,
         {
@@ -75,7 +71,6 @@ export const Footer = () => {
         "-=0.6"
       );
 
-      // Add a continuous subtle animation to the back to top button
       gsap.to(backToTopRef.current, {
         y: "-10px",
         duration: 1.5,
@@ -87,7 +82,6 @@ export const Footer = () => {
     { scope: containerRef }
   );
 
-  // Function to scroll to top when the button is clicked
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -97,6 +91,7 @@ export const Footer = () => {
 
   return (
     <Box
+      id="footer"
       ref={containerRef}
       sx={{
         position: "relative",

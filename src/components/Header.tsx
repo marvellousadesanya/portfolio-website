@@ -94,6 +94,13 @@ export const Header = () => {
     { scope: container }
   );
 
+  const handleContactClick = () => {
+    const footer = document.getElementById("footer");
+    if (footer) {
+      footer.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Box ref={container}>
       <Box
@@ -199,6 +206,7 @@ export const Header = () => {
         />
 
         <Box
+          onClick={handleContactClick}
           ref={contactRef}
           sx={{
             cursor: "pointer",
@@ -213,7 +221,7 @@ export const Header = () => {
             fontFamily="Poppins"
             fontWeight={600}
             color="black"
-            fontSize="12px">
+            fontSize={{ xs: "12px", md: "16px" }}>
             Contact Me
           </Typography>
         </Box>

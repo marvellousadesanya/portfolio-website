@@ -2,16 +2,64 @@ import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import project1 from "../../../../assets/project-1.png";
 import project2 from "../../../../assets/project-2.png";
 import project3 from "../../../../assets/project-3.png";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export const GalleryGrid = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const containerRef = useRef(null);
+  const project1Ref = useRef(null);
+  const project2Ref = useRef(null);
+  const project3Ref = useRef(null);
+
+  useGSAP(
+    () => {
+      // Create a timeline for the animations
+      const tl = gsap.timeline();
+
+      // First project animation
+      tl.from(project1Ref.current, {
+        x: -30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+
+      // Second project animation
+      tl.from(
+        project2Ref.current,
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.5"
+      );
+
+      // Third project animation
+      tl.from(
+        project3Ref.current,
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.5"
+      );
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <Box width="100%">
+    <Box ref={containerRef} width="100%">
       <Stack direction={isMobile ? "column" : "row"} spacing={2}>
         {/* First column with one tall image */}
         <Box
+          ref={project1Ref}
           sx={{
             width: "100%",
             borderRadius: "20px",
@@ -35,7 +83,7 @@ export const GalleryGrid = () => {
             height: isMobile ? "auto" : "100%",
           }}>
           {/* First image takes 50% of height */}
-          <Box sx={{ flex: 1 }}>
+          <Box ref={project2Ref} sx={{ flex: 1 }}>
             <img
               src={project2}
               alt="project2"
@@ -44,7 +92,7 @@ export const GalleryGrid = () => {
           </Box>
 
           {/* Second image takes 50% of height */}
-          <Box sx={{ flex: 1 }}>
+          <Box ref={project3Ref} sx={{ flex: 1 }}>
             <img
               src={project3}
               alt="project3"

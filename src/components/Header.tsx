@@ -1,14 +1,101 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import hamburgerIcon from "../assets/hamburger.svg";
 import ellipse from "../assets/ellipse.svg";
 import logo from "../assets/logo.png";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 export const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const container = useRef(null);
+  const nameRef = useRef(null);
+  const titleRef = useRef(null);
+  const lineRef = useRef(null);
+  const logoRef = useRef(null);
+  const contactRef = useRef(null);
+  const ellipse1Ref = useRef(null);
+  const ellipse2Ref = useRef(null);
+  const ellipse3Ref = useRef(null);
+
+  useGSAP(
+    () => {
+      // Create a timeline for better control
+      const tl = gsap.timeline();
+
+      // Logo animation
+      tl.from(logoRef.current, {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      // Text animations with stagger
+      tl.from(
+        nameRef.current,
+        {
+          x: -100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+        },
+        "-=0.4"
+      );
+
+      tl.from(
+        titleRef.current,
+        {
+          x: -100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+        },
+        "-=0.6"
+      );
+
+      // Line animation
+      tl.from(
+        lineRef.current,
+        {
+          width: 0,
+          duration: 0.8,
+          ease: "power1.inOut",
+        },
+        "-=0.4"
+      );
+
+      // Contact button animation
+      tl.from(
+        contactRef.current,
+        {
+          y: -30,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=0.6"
+      );
+
+      // Ellipse animations
+      tl.from(
+        [ellipse1Ref.current, ellipse2Ref.current, ellipse3Ref.current],
+        {
+          scale: 0,
+          opacity: 0,
+          rotation: "+=90",
+          duration: 1.2,
+          stagger: 0.2,
+          ease: "elastic.out(1, 0.3)",
+        },
+        "-=0.8"
+      );
+    },
+    { scope: container }
+  );
 
   return (
-    <>
+    <Box ref={container}>
       <Box
         sx={{
           position: "relative",
@@ -26,6 +113,7 @@ export const Header = () => {
             zIndex: 2,
           }}>
           <Typography
+            ref={nameRef}
             sx={{
               fontWeight: 700,
               color: "black",
@@ -34,6 +122,7 @@ export const Header = () => {
             Ovenseri Esther Itohan
           </Typography>
           <Typography
+            ref={titleRef}
             variant="h1"
             sx={{
               fontWeight: 500,
@@ -49,6 +138,7 @@ export const Header = () => {
               alignItems: "center",
             }}>
             <Box
+              ref={lineRef}
               bgcolor="black"
               width={{ xs: "70px", md: "100px" }}
               height={{ xs: "23px", md: "10px" }}
@@ -58,6 +148,7 @@ export const Header = () => {
         </Box>
 
         <img
+          ref={logoRef}
           src={logo}
           alt="logo"
           style={{
@@ -70,6 +161,7 @@ export const Header = () => {
           }}
         />
         <img
+          ref={ellipse1Ref}
           src={ellipse}
           alt="ellipse"
           style={{
@@ -81,6 +173,7 @@ export const Header = () => {
           }}
         />
         <img
+          ref={ellipse2Ref}
           src={ellipse}
           alt="ellipse"
           style={{
@@ -92,6 +185,7 @@ export const Header = () => {
           }}
         />
         <img
+          ref={ellipse3Ref}
           src={ellipse}
           alt="ellipse"
           style={{
@@ -104,19 +198,26 @@ export const Header = () => {
           }}
         />
 
-        <img
-          src={hamburgerIcon}
-          alt="hamburger"
-          style={{
-            width: isMobile ? "30px" : "40px",
-            height: isMobile ? "30px" : "40px",
+        <Box
+          ref={contactRef}
+          sx={{
+            cursor: "pointer",
             display: "block",
             position: "absolute",
-            right: "20px",
+            right: "10px",
             top: "20px",
-          }}
-        />
+            fontSize: "12px",
+            lineHeight: 1,
+          }}>
+          <Typography
+            fontFamily="Poppins"
+            fontWeight={600}
+            color="black"
+            fontSize="12px">
+            Contact Me
+          </Typography>
+        </Box>
       </Box>
-    </>
+    </Box>
   );
 };
